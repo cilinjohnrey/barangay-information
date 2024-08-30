@@ -433,6 +433,11 @@ class regValidation extends Controller
         return view('dashboards/dbResidents');
     }
 
+    public function blogs()
+    {
+        return view('dashboards/resdidentsDb/blogs');
+    }
+
     public function traceResidents()
     {
         return view('dashboards/dbResidents');
@@ -3102,5 +3107,7 @@ public function dengue(Request $request)
     // Pass the data to the view
     return view('dashboards/healthWorkerDb/dengue', $data);
 }
+
+
 
 }

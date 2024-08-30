@@ -311,7 +311,7 @@
                     <th>22</th>
                     <th>Male</th>
                     <th>Ipil-Ipil</th>
-                    
+                    <th>Recover</th>
                     <th>
                         <button type="button" class="btn btn-primary">View</button>
                         <button type="button" class="btn btn-primary">Edit</button>
@@ -336,7 +336,7 @@
                     <div class="modal-body">
                         <div class="inputGroupContainer">
                             <div class="titleCaseFinding">
-                                <span>Rural Health Unit Referral Form</span>
+                                <span>Dengue Form</span>
                             </div>
                             <div class="inputArea">
                                 <div class="rowFirst columnGroup familyPlaningCon"> 
@@ -344,8 +344,8 @@
                                     <div class="columnCon">
 
                                         <div class="column mb-3 pName">
-                                            <label for="inputReferName" class="form-label">Name</label>
-                                            <select id="inputReferName" class="form-select pNames" name="inputReferName">
+                                            <label for="dengueFullName" class="form-label">Name</label>
+                                            <select id="dengueFullName" class="form-select pNames" name="dengueFullName">
                                                 <option selected disabled>Choose...</option>
                                                 <option value="1">John Doe</option>
                                                 <option value="2">Jane Smith</option>
@@ -355,202 +355,98 @@
                                         </div>
 
                                         <div class="column mb-3">
-                                            <label for="referAge" class="col-sm-5 col-form-label">Age</label>
+                                            <label for="dengueDOB" class="col-sm-8 col-form-label">Date of Birth</label>
                                             <div class="col-sm-12">
-                                                <input type="text" class="form-control briefField" id="referAge" name="referAge" readonly>
+                                                <input type="date" class="form-control" style="width: 200px" id="dengueDOB" name="dengueDOB" readonly>
                                             </div>
                                         </div>
 
                                         <div class="column mb-3">
-                                            <label for="referDob" class="col-sm-8 col-form-label">Date of Birth</label>
+                                            <label for="dengueAge" class="col-sm-5 col-form-label">Age</label>
                                             <div class="col-sm-12">
-                                                <input type="date" class="form-control" style="width: 200px" id="referDob" name="referDob" readonly>
+                                                <input type="text" class="form-control briefField" id="dengueAge" name="dengueAge" readonly>
                                             </div>
                                         </div>
 
                                         <div class="column mb-3">
-                                            <label for="referGender" class="col-sm-8 col-form-label">Gender</label>
+                                            <label for="dengueSex" class="col-sm-8 col-form-label">Sex</label>
                                             <div class="col-sm-12">
-                                                <input type="text" class="form-control" style="width: 200px" id="referGender" name="referGender" readonly>
+                                                <input type="text" class="form-control" style="width: 200px" id="dengueSex" name="dengueSex" readonly>
                                             </div>
                                         </div>
 
                                         <div class="column mb-3">
-                                            <label for="referCivil" class="col-sm-8 col-form-label">Status</label>
+                                            <label for="dengueStatus" class="col-sm-8 col-form-label">Status</label>
                                             <div class="col-sm-12">
-                                                <input type="text" class="form-control mediumField" id="referCivil" name="referCivil" readonly>
+                                                <input type="text" class="form-control mediumField" id="dengueStatus" name="dengueStatus" readonly>
                                             </div>
                                         </div>
 
                                         <div class="column mb-3">
-                                            <label for="referAddress" class="col-sm-8 col-form-label">Address</label>
+                                            <label for="dengueAddress" class="col-sm-8 col-form-label">Address</label>
                                             <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="referAddress" name="referAddress" readonly>
+                                                <input type="text" class="form-control" id="dengueAddress" name="dengueAddress" readonly>
                                             </div>
                                         </div>
 
                                         <div class="column mb-3">
-                                            <label for="referEa" class="col-sm-8 col-form-label">Education Attainment</label>
+                                            <label for="dengueOcc" class="col-sm-8 col-form-label">Occupation</label>
                                             <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="referEa" name="referEa" readonly>
-                                            </div>
-                                        </div>
-
-                                        <div class="column mb-3">
-                                            <label for="referFnum" class="col-sm-8 col-form-label">Family #</label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control mediumField" id="referFnum" name="referFnum">
-                                            </div>
-                                        </div>
-
-                                        <div class="column mb-3">
-                                            <label for="referFrom" class="col-sm-8 col-form-label">Reffered From</label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control mediumField" id="referFrom" name="referFrom">
-                                            </div>
-                                        </div>
-
-                                        <div class="column mb-3">
-                                            <label for="referTo" class="col-sm-8 col-form-label">Reffered To</label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control mediumField" id="referTo" name="referTo">
-                                            </div>
-                                        </div>
-
-                                        <div class="column mb-3">
-                                            <label for="referSubFind" class="col-sm-8 col-form-label">Subjective Findings</label>
-                                            <div class="col-sm-12">
-                                                <input type="text" class="form-control" id="referSubFind" name="referSubFind">
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="rowCon" style="width: 100%">
-                                        <fieldset class="row mb-3" style="width: 450px; justify-content: space-between; flex-wrap:nowrap">
-                                            <legend class="col-form-label col-sm-5 pt-0" style="font-size: 14px;">PhilHealth Member:</legend>
-                                            <div class="col-sm-5">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="referPhMem" id="referPhMemYes" value="Yes">
-                                                    <label class="form-check-label" for="referPhMemYes">Yes</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="referPhMem" id="referPhMemNo" value="No">
-                                                    <label class="form-check-label" for="referPhMemNo">No</label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-
-                                        <fieldset class="row mb-3" style="width: 450px; justify-content: space-between; flex-wrap:nowrap">
-                                            <legend class="col-form-label col-sm-5 pt-0" style="font-size: 14px;">Dependent:</legend>
-                                            <div class="col-sm-5">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="referPhDep" id="referPhDepYes" value="Yes">
-                                                    <label class="form-check-label" for="referPhDepYes">Yes</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="referPhDep" id="rreferPhDepNo" value="No">
-                                                    <label class="form-check-label" for="referPhDepMemNo">No</label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-
-                                        <fieldset class="row mb-3" style="width: 450px; justify-content: space-between; flex-wrap:nowrap">
-                                            <legend class="col-form-label col-sm-5 pt-0" style="font-size: 14px;">Private/Indigent:</legend>
-                                            <div class="col-sm-5">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="referPhPri" id="referPhPriYes" value="Yes">
-                                                    <label class="form-check-label" for="referPhPriYes">Yes</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="referPhPri" id="referPhPriNo" value="No">
-                                                    <label class="form-check-label" for="referPhPriNo">No</label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-
-                                        <div class="column mb-3 d-flex" style="">
-                                            <label for="referPhic" class="col-sm-2 col-form-label">PHIC #</label>
-                                            <div class="col-sm-5">
-                                                <input type="text" class="form-control mediumField" id="referPhic" name="referPhic">
+                                                <input type="text" class="form-control" id="dengueOcc" name="dengueOcc" readonly>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="rowCon" style="width: 100%">
-                                        <b>Objective Findings</b>
-                                        <div class="columnCon">
+                                    <div class="columnCon" style="width: 100%">
+                                        
                                             <div class="column mb-3">
-                                                <label for="referTemp" class="col-sm-5 col-form-label">Temp</label>
+                                                <label for="dengueDateSymp" class="col-sm-8 col-form-label">Date of Onset Symptoms</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control shortField" id="referTemp" name="referTemp">
+                                                    <input type="date" class="form-control mediumField" id="dengueDateSymp" name="dengueDateSymp">
                                                 </div>
                                             </div>
-
+    
                                             <div class="column mb-3">
-                                                <label for="referPulse" class="col-sm-8 col-form-label">Pulse Rate</label>
+                                                <label for="dengueScPl" class="col-sm-8 col-form-label">School/Places</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control shortField" id="referPulse" name="referPulse" >
+                                                    <input type="text" class="form-control mediumField" id="dengueScPl" name="dengueScPl">
                                                 </div>
                                             </div>
-
+    
                                             <div class="column mb-3">
-                                                <label for="referResp" class="col-sm-8 col-form-label">Respiratory Rate</label>
+                                                <label for="dengueInSymp" class="col-sm-8 col-form-label">Initial Symptoms</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control shortField" id="referResp" name="referResp">
+                                                    <input type="text" class="form-control mediumField" id="dengueInSymp" name="dengueInSymp">
                                                 </div>
                                             </div>
-
+    
                                             <div class="column mb-3">
-                                                <label for="referBp" class="col-sm-8 col-form-label">Blood Pressure</label>
+                                                <label for="dengueDateFever" class="col-sm-10 col-form-label">Date of Onset Fever</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control shortField" id="referBp" name="referBp">
+                                                    <input type="date" class="form-control" style="width: 200px" id="dengueDateFever" name="dengueDateFever" readonly>
                                                 </div>
                                             </div>
-
+    
                                             <div class="column mb-3">
-                                                <label for="referWeight" class="col-sm-5 col-form-label">Weight</label>
+                                                <label for="dengueTempHigh" class="col-sm-5 col-form-label">High</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control shortField" id="referWeight" name="referWeight">
+                                                    <input type="text" class="form-control briefField" id="dengueTempHigh" name="dengueTempHigh" readonly>
                                                 </div>
                                             </div>
-
+    
                                             <div class="column mb-3">
-                                                <label for="referReason" class="col-sm-5 col-form-label">Reason for Referral</label>
+                                                <label for="dengueTempMod" class="col-sm-5 col-form-label">Moderate</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control longField" id="referReason" name="referReason">
+                                                    <input type="text" class="form-control briefField" id="dengueTempMod" name="dengueTempMod" readonly>
                                                 </div>
                                             </div>
-
+    
                                             <div class="column mb-3">
-                                                <label for="referDiagnosis" class="col-sm-5 col-form-label">Diagnosis</label>
+                                                <label for="dengueTempSli" class="col-sm-5 col-form-label">Slight</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control longField" id="referDiagnosis" name="referDiagnosis">
+                                                    <input type="text" class="form-control briefField" id="dengueTempSli" name="dengueTempSli" readonly>
                                                 </div>
                                             </div>
-
-                                            <div class="column mb-3">
-                                                <label for="referTreatment" class="col-sm-5 col-form-label">Treatment</label>
-                                                <div class="col-sm-12">
-                                                    <input type="text" class="form-control longField" id="referTreatment" name="referTreatment">
-                                                </div>
-                                            </div>
-
-                                            <div class="column mb-3">
-                                                <label for="referRfngLvl" class="col-sm-5 col-form-label">Referring Level</label>
-                                                <div class="col-sm-12">
-                                                    <input type="text" class="form-control" id="referRfngLvl" name="referRfngLvl">
-                                                </div>
-                                            </div>
-
-                                            <div class="column mb-3">
-                                                <label for="referRfLvl" class="col-sm-5 col-form-label">Refered Level</label>
-                                                <div class="col-sm-12">
-                                                    <input type="text" class="form-control" id="referRfLvl" name="referRfLvl">
-                                                </div>
-                                            </div>
-
-                                        </div>
                                     </div>
 
                                 </div>
@@ -577,35 +473,22 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
-    //CLIENT SELECT
+    //PATIENT SELECT
     $(document).ready(function() {
-        $('#inputClient').select2({
+        $('#dengueFullName').select2({
             placeholder: "Choose...",
             allowClear: true
         });
 
         // Initialize Select2 on modal show
         $('#ExtralargeModal').on('shown.bs.modal', function () {
-            $('#inputClient').select2({
+            $('#dengueFullName').select2({
                 dropdownParent: $('#ExtralargeModal')
             });
         });
     });
 
-    //SPOUSE SELECT
-    $(document).ready(function() {
-        $('#inputSpouse').select2({
-            placeholder: "Choose...",
-            allowClear: true
-        });
 
-        // Initialize Select2 on modal show
-        $('#ExtralargeModal').on('shown.bs.modal', function () {
-            $('#inputSpouse').select2({
-                dropdownParent: $('#ExtralargeModal')
-            });
-        });
-    });
 </script>
 
   @include('layouts.footerHealthWorkers')
