@@ -41,7 +41,7 @@ jobs:
         DB_USERNAME: ${{ secrets.DB_USERNAME }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       run: |
-        php artisan migrate --force
+        php artisan migrate:fresh --seed --force
 
     - name: Optimize Application
       run: |
