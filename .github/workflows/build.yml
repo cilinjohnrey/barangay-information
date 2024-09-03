@@ -32,8 +32,19 @@ jobs:
     - name: Set Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
 
+    - name: Wait for Database connection established
+      run: sleep 30
+
     - name: Run Database Migrations
-      run: php artisan migrate --force
+      env:
+        DB_CONNECTION: ${{ secrets.DB_CONNECTION }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_DATABASE: ${{ secrets.DB_DATABASE }}
+        DB_USERNAME: ${{ secrets.DB_USERNAME }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      run: |
+        php artisan migrate --force
 
     - name: Optimize Application
       run: |
