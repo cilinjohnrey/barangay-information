@@ -46,7 +46,7 @@ Route::get('/residentCertificate/{id}', [regValidation::class, 'getResidentCerti
 // for complaints
 Route::post('saveComplaints', [regValidation::class, 'saveComplaints'])->name('regValidation.saveComplaints');
 Route::get('/dashboards/secretariesDb/dbBlotter', [regValidation::class, 'dbBlotter']);
-Route::get('/residentComplaint/{id}', [regValidation::class, 'getResidentComplaint'])->name('resident.data');
+Route::get('/residentComplaint/{id}', [regValidation::class, 'getResidentComplaint'])->name('resident.complaint.data');
 Route::get('/dashboards/secretariesDb/brgyBlotter', [regValidation::class, 'viewBrgyBlotter']);
 Route::put('/upBlotter/{id}', [regValidation::class, 'updateBlotter'])->name('updateBlotter');
 Route::post('/update-blotter-status', [regValidation::class, 'updateBlotterStatus']);
