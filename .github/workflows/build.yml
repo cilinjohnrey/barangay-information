@@ -20,10 +20,11 @@ jobs:
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-    - name: Setup Environment
+    - name: Set Environment Variables
       run: |
-        echo "APP_NAME='Barangay Information Management'" >> .env
+        echo "APP_NAME=\"Barangay Information Management\"" >> .env
         echo "APP_ENV=production" >> .env
+        echo "APP_KEY=" >> .env
         echo "APP_DEBUG=false" >> .env
         echo "APP_URL=${{ secrets.APP_URL }}" >> .env
         echo "DB_CONNECTION=mysql" >> .env
@@ -46,11 +47,25 @@ jobs:
       run: chmod -R 777 storage bootstrap/cache
 
     - name: Check Database State
+      env:
+        DB_CONNECTION: mysql
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_DATABASE: ${{ secrets.DB_DATABASE }}
+        DB_USERNAME: ${{ secrets.DB_USERNAME }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       run: |
         php artisan migrate:status
         php artisan tinker --execute="print_r(DB::select('SHOW TABLES'));"
 
     - name: Run Database Migrations
+      env:
+        DB_CONNECTION: mysql
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_DATABASE: ${{ secrets.DB_DATABASE }}
+        DB_USERNAME: ${{ secrets.DB_USERNAME }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       run: php artisan migrate --force
 
     - name: Optimize Application
@@ -64,6 +79,5 @@ jobs:
         response=$(curl -s -o response.txt -w "%{http_code}" --request GET '${{ secrets.COOLIFY_WEBHOOK }}' --header 'Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}')
         if [ $response -ne 200 ]; then
           echo "Deployment failed with status code: $response"
-          cat response.txt
           exit 1
         fi
