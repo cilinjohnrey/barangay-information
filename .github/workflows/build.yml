@@ -32,6 +32,22 @@ jobs:
     - name: Set Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
 
+    - name: Debug Environment
+      run: |
+        echo "APP_NAME: $APP_NAME"
+        echo "DB_CONNECTION: $DB_CONNECTION"
+        echo "DB_HOST: $DB_HOST"
+        echo "DB_PORT: $DB_PORT"
+        echo "DB_DATABASE: $DB_DATABASE"
+        echo "DB_USERNAME: $DB_USERNAME"
+      env:
+        APP_NAME: ${{ secrets.APP_NAME }}
+        DB_CONNECTION: ${{ secrets.DB_CONNECTION }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_DATABASE: ${{ secrets.DB_DATABASE }}
+        DB_USERNAME: ${{ secrets.DB_USERNAME }}
+    
     - name: Check Database State
       env:
         DB_CONNECTION: mysql
